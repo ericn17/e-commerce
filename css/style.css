@@ -7,6 +7,12 @@ html {
   height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 :root {
   --primarycolor: #e5e5dc ;
   --secondarycolor: #26495c ;
@@ -37,12 +43,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  z-index: 1;
 }
+
 
 #navbar li {
   list-style: none;
   padding: 0 20px;
-  position: relative;
 }
 
 #navbar li a {
@@ -55,12 +63,98 @@ html {
 
 }
 
-#navbar li a:hover {
-  color: var(--linkcolor);
-}
-
-#navbar li a.active {
+#navbar li a:hover, #navbar li a.active {
   color: var(--linkcolor);
   padding-bottom: .5px;
   border-bottom: 2px solid var(--linkcolor);
 }
+
+.toggle-button {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondarycolor);
+  border-radius: 10px;
+}
+
+/* ------------------ Homepage ------------------------- */
+
+/* hero */
+
+#hero {
+  --num-cols: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+}
+
+.hero-1 {
+ background-image: url(../assets/img/hero-image-1.jpg);
+ height: 90vh;
+ width: 100%;
+ background-size: cover;
+ background-position: top 80% right 0;
+ opacity: 90%;
+}
+
+.hero-info {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 25rem;
+  gap: 1em;
+  font-family: var(--primaryfont);
+}
+
+.hero-info h1 {
+  font-size: 45px;
+}
+
+.hero-info p {
+  font-size: 24px;
+}
+
+.shop {
+  display: inline-block;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 17px 30px;
+  border: 0;
+  color: #fff;
+  font-size: 17.5px;
+  border: 2px solid transparent;
+  border-color: #000;
+  color: #000;
+  font-weight: 800;
+  line-height: 30px;
+  transition: .1s ease-in-out;
+}
+
+.shop:hover {
+   background-color: #000;
+   color: #fff;
+ }
+
+.hero-2 {
+  background-image: url(../assets/img/hero-image-2.jpg);
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: left 0;
+}
+
+
+
+
+

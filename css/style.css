@@ -17,6 +17,7 @@ body {
   --primarycolor: #e5e5dc ;
   --secondarycolor: #26495c ;
   --linkcolor: #c4a35a;
+  --imgbackground: #cce7d0;
 
 
 
@@ -36,7 +37,11 @@ body {
   justify-content: space-between;
   padding: 20px 80px;
   background: var(--primarycolor);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06)
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 #navbar {
@@ -104,16 +109,20 @@ body {
  width: 100%;
  background-size: cover;
  background-position: top 80% right 0;
- opacity: 90%;
+ opacity: 85%;
 }
 
 .hero-info {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 25rem;
-  gap: 1em;
   font-family: var(--primaryfont);
+  padding: 250px 10px;
+  gap: 20px;
+  color:#000;
+  font-weight:900;
+  opacity: 100%;
 }
 
 .hero-info h1 {
@@ -154,7 +163,82 @@ body {
   background-position: left 0;
 }
 
+/* Featured Products */
 
+#product1 {
+  text-align: center;
+  font-family: var(--primaryfont);
+  margin-top: 3.5rem;
+}
+
+#product1 h2 {
+  font-size: 60px;
+}
+
+#product1 p {
+  font-size: 30px;
+  opacity: 55%;
+}
+
+#product1 .pro {
+  width: 20%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid var(--imgbackground);
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 50px;
+  transition: 0.2 ease;
+  position: relative;
+
+}
+
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+  min-height: 327.27px
+}
+
+#product1 .pro .description {
+  padding: 10px 0;
+  text-align: start;
+}
+
+#product1 .pro span {
+  font-size: 18px
+}
+
+#product1 .pro .description h5 {
+  font-size: 20px;
+  padding-top:7px;
+  padding-bottom: 7px;
+}
+
+#product1 .pro .fa-cart-shopping {
+  color: #000;
+  background-color: var(--imgbackground);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+#product1 .pro-container {
+  display: flex;
+  justify-content: space between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
 
 
 
